@@ -194,6 +194,43 @@
     .program-group[open] .program-chevron { transform: rotate(180deg); }
     .program-group-body { padding: 1.2rem 1.5rem 0.5rem; }
 
+    /* ── Collapsible Sections ── */
+    section.collapsible {
+      padding: 0.75rem 2rem;
+      border-bottom: none;
+      scroll-margin-top: 70px;
+    }
+    #ml.collapsible { padding-top: 2.5rem; }
+    .section-collapse > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      user-select: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .section-collapse > summary::-webkit-details-marker { display: none; }
+    .section-collapse > summary:hover { background: #1c2128; border-color: #58a6ff; }
+    .section-collapse > summary:focus-visible { outline: 2px solid #58a6ff; outline-offset: 2px; }
+    .section-collapse[open] > summary { border-color: #58a6ff88; }
+    .section-collapse > summary h2 { font-size: 1.4rem; margin-bottom: 0.2rem; }
+    .section-collapse > summary .section-label { margin-bottom: 0.4rem; }
+    .section-collapse > summary .section-intro { margin-bottom: 0; }
+    .section-chevron {
+      font-size: 1.2rem;
+      color: #8b949e;
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+    .section-collapse[open] > summary .section-chevron { transform: rotate(180deg); }
+    .section-body { padding: 1.75rem 0 1.5rem; }
+
     /* ── Cards Group Label ── */
     .cards-group-label {
       font-size: 0.88rem;
@@ -223,6 +260,7 @@
     .card-type.paper { background: #1e1a2e; color: #a78bfa; border: 1px solid #a78bfa55; }
     .card-type.linkedin { background: #0a1628; color: #4fa3e0; border: 1px solid #4fa3e055; }
     .card-type.course { background: #0d2626; color: #2dd4bf; border: 1px solid #2dd4bf55; }
+    .card-type.progress { background: #2d2508; color: #e3b341; border: 1px solid #e3b34155; }
 
     .qml-roadmap-wrapper {
       margin: 0 0 2rem 0;
@@ -336,284 +374,235 @@
   </section>
 
   <!-- ── Machine Learning ── -->
-  <section id="ml">
-    <span class="section-label">Machine Learning</span>
-    <h2>Machine Learning</h2>
-    <p class="section-intro">Exploring machine learning through projects, research, and hands-on experimentation.</p>
-
-    <!-- Collapsible: University of Ottawa -->
-    <details class="program-group" open>
+  <section id="ml" class="collapsible">
+    <details class="section-collapse">
       <summary>
-        <div class="program-summary-left">
-          <span class="program-summary-icon">🎓</span>
-          <div>
-            <div class="program-summary-title">Master of Interdisciplinary Artificial Intelligence — University of Ottawa</div>
-            <div class="program-summary-sub">uOttawa · In Progress</div>
-          </div>
+        <div>
+          <span class="section-label">Machine Learning</span>
+          <h2>Machine Learning</h2>
+          <p class="section-intro">Exploring machine learning through projects, research, and hands-on experimentation.</p>
         </div>
-        <span class="program-chevron">▾</span>
+        <span class="section-chevron" aria-hidden="true">▾</span>
       </summary>
-      <div class="program-group-body">
-        <h3 class="cards-group-label">🔗 Program</h3>
-        <div class="cards">
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Master of Interdisciplinary Artificial Intelligence</div>
-              <span class="card-type uottawa">uOttawa</span>
+      <div class="section-body">
+        <!-- Collapsible: University of Ottawa -->
+        <details class="program-group" open>
+          <summary>
+            <div class="program-summary-left">
+              <span class="program-summary-icon">🎓</span>
+              <div>
+                <div class="program-summary-title">Master of Interdisciplinary Artificial Intelligence — University of Ottawa</div>
+                <div class="program-summary-sub">uOttawa · In Progress</div>
+              </div>
             </div>
-            <a class="card-link" href="https://www.uottawa.ca/faculty-engineering/online-programs/master-interdisciplinary-artificial-intelligence" target="_blank" rel="noopener">→ View Program</a>
+            <span class="program-chevron">▾</span>
+          </summary>
+          <div class="program-group-body">
+            <h3 class="cards-group-label">🔗 Program</h3>
+            <div class="cards">
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">Master of Interdisciplinary Artificial Intelligence</div>
+                  <span class="card-type uottawa">uOttawa</span>
+                </div>
+                <a class="card-link" href="https://www.uottawa.ca/faculty-engineering/online-programs/master-interdisciplinary-artificial-intelligence" target="_blank" rel="noopener">→ View Program</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </details>
+        </details>
 
-    <!-- Collapsible: Important Papers -->
-    <details class="program-group">
-      <summary>
-        <div class="program-summary-left">
-          <span class="program-summary-icon">📄</span>
-          <div>
-            <div class="program-summary-title">Important Papers</div>
-            <div class="program-summary-sub">Landmark ML research · Reading list</div>
-          </div>
-        </div>
-        <span class="program-chevron">▾</span>
-      </summary>
-      <div class="program-group-body">
-        <div class="cards">
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Attention Is All You Need</div>
-              <span class="card-type paper">Paper</span>
+        <!-- Collapsible: Lighthouse Labs -->
+        <details class="program-group">
+          <summary>
+            <div class="program-summary-left">
+              <span class="program-summary-icon">🎓</span>
+              <div>
+                <div class="program-summary-title">Data Science Program — Lighthouse Labs</div>
+                <div class="program-summary-sub">Lighthouse Labs · Completed</div>
+              </div>
             </div>
-            <div class="card-meta">Vaswani et al. · Google Brain · NeurIPS 2017</div>
-            <div class="card-desc">Introduced the Transformer architecture, replacing RNNs with self-attention for sequence modelling. Foundation of all modern LLMs.</div>
-            <a class="card-link" href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">→ Read on arXiv</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Deep Residual Learning for Image Recognition</div>
-              <span class="card-type paper">Paper</span>
+            <span class="program-chevron">▾</span>
+          </summary>
+          <div class="program-group-body">
+            <h3 class="cards-group-label">📝 Article</h3>
+            <div class="cards">
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">CPL: Machine Learning vs Real Result</div>
+                  <span class="card-type article">Article</span>
+                </div>
+                <a class="card-link" href="https://medium.com/@leo.fonseca.canada/cpl-machine-learning-vs-real-result-8738a6f67115" target="_blank" rel="noopener">→ Read on Medium</a>
+              </div>
             </div>
-            <div class="card-meta">He et al. · Microsoft Research · CVPR 2016</div>
-            <div class="card-desc">Proposed residual (skip) connections to train very deep CNNs. ResNet won ImageNet 2015 and remains a standard backbone.</div>
-            <a class="card-link" href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noopener">→ Read on arXiv</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Generative Adversarial Networks</div>
-              <span class="card-type paper">Paper</span>
+            <h3 class="cards-group-label">💻 Projects</h3>
+            <div class="cards">
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">Statistical Modelling Project</div>
+                  <span class="card-type github">GitHub</span>
+                </div>
+                <a class="card-link" href="https://github.com/leoaugusto1976/Statistical-Modelling-Project" target="_blank" rel="noopener">→ View on GitHub</a>
+              </div>
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">Final Project — Tableau</div>
+                  <span class="card-type github">GitHub</span>
+                </div>
+                <a class="card-link" href="https://github.com/leoaugusto1976/Final-Project-Tableau" target="_blank" rel="noopener">→ View on GitHub</a>
+              </div>
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">Midterm Project</div>
+                  <span class="card-type github">GitHub</span>
+                </div>
+                <a class="card-link" href="https://github.com/leoaugusto1976/Midterm_Project" target="_blank" rel="noopener">→ View on GitHub</a>
+              </div>
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">RnR — CPL Predictions</div>
+                  <span class="card-type github">GitHub</span>
+                </div>
+                <a class="card-link" href="https://github.com/leoaugusto1976/RnR-CPL" target="_blank" rel="noopener">→ View on GitHub</a>
+              </div>
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">Supervised Learning Project</div>
+                  <span class="card-type github">GitHub</span>
+                </div>
+                <a class="card-link" href="https://github.com/leoaugusto1976/LHL-Supervised-Learning-Project" target="_blank" rel="noopener">→ View on GitHub</a>
+              </div>
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">XGBoost Assignments</div>
+                  <span class="card-type github">GitHub</span>
+                </div>
+                <a class="card-link" href="https://github.com/leoaugusto1976/XGBoost-Assignments" target="_blank" rel="noopener">→ View on GitHub</a>
+              </div>
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">Unsupervised Learning Project</div>
+                  <span class="card-type github">GitHub</span>
+                </div>
+                <a class="card-link" href="https://github.com/leoaugusto1976/LHL-Unsupervised-Learning-Project" target="_blank" rel="noopener">→ View on GitHub</a>
+              </div>
+              <div class="card">
+                <div class="card-header-row">
+                  <div class="card-title">LHL Final Project</div>
+                  <span class="card-type github">GitHub</span>
+                </div>
+                <a class="card-link" href="https://github.com/leoaugusto1976/lhl-final-project" target="_blank" rel="noopener">→ View on GitHub</a>
+              </div>
             </div>
-            <div class="card-meta">Goodfellow et al. · Université de Montréal · NeurIPS 2014</div>
-            <div class="card-desc">Introduced the GAN framework — a generator and a discriminator trained adversarially to produce realistic synthetic data.</div>
-            <a class="card-link" href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener">→ Read on arXiv</a>
           </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</div>
-              <span class="card-type paper">Paper</span>
-            </div>
-            <div class="card-meta">Devlin et al. · Google AI Language · NAACL 2019</div>
-            <div class="card-desc">Showed that bidirectional pre-training of Transformers on large text corpora yields state-of-the-art NLP results via fine-tuning.</div>
-            <a class="card-link" href="https://arxiv.org/abs/1810.04805" target="_blank" rel="noopener">→ Read on arXiv</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Playing Atari with Deep Reinforcement Learning</div>
-              <span class="card-type paper">Paper</span>
-            </div>
-            <div class="card-meta">Mnih et al. · DeepMind · NeurIPS Workshop 2013</div>
-            <div class="card-desc">First deep RL model to learn control policies directly from raw pixels, combining CNNs with Q-learning (DQN).</div>
-            <a class="card-link" href="https://arxiv.org/abs/1312.5602" target="_blank" rel="noopener">→ Read on arXiv</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">ImageNet Classification with Deep Convolutional Neural Networks (AlexNet)</div>
-              <span class="card-type paper">Paper</span>
-            </div>
-            <div class="card-meta">Krizhevsky, Sutskever, Hinton · University of Toronto · NeurIPS 2012</div>
-            <div class="card-desc">AlexNet kicked off the deep learning revolution by winning ImageNet 2012 by a large margin using GPUs and ReLU activations.</div>
-            <a class="card-link" href="https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html" target="_blank" rel="noopener">→ Read on NeurIPS</a>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Collapsible: Books -->
-    <details class="program-group">
-      <summary>
-        <div class="program-summary-left">
-          <span class="program-summary-icon">📚</span>
-          <div>
-            <div class="program-summary-title">Books I'm Reading</div>
-            <div class="program-summary-sub">Self-study · In Progress</div>
-          </div>
-        </div>
-        <span class="program-chevron">▾</span>
-      </summary>
-      <div class="program-group-body">
-        <div class="cards">
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Pattern Recognition and Machine Learning</div>
-              <span class="card-type book">Book</span>
-            </div>
-            <div class="card-meta">Christopher M. Bishop · Microsoft Research · 2006</div>
-            <a class="card-link" href="https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf" target="_blank" rel="noopener">→ Read PDF</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</div>
-              <span class="card-type book">Book</span>
-            </div>
-            <div class="card-meta">Aurélien Géron · O'Reilly · 2nd Edition, 2019</div>
-            <a class="card-link" href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/" target="_blank" rel="noopener">→ View on O'Reilly</a>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Collapsible: Lighthouse Labs -->
-    <details class="program-group">
-      <summary>
-        <div class="program-summary-left">
-          <span class="program-summary-icon">🎓</span>
-          <div>
-            <div class="program-summary-title">Data Science Program — Lighthouse Labs</div>
-            <div class="program-summary-sub">Lighthouse Labs · Completed</div>
-          </div>
-        </div>
-        <span class="program-chevron">▾</span>
-      </summary>
-      <div class="program-group-body">
-        <h3 class="cards-group-label">📝 Article</h3>
-        <div class="cards">
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">CPL: Machine Learning vs Real Result</div>
-              <span class="card-type article">Article</span>
-            </div>
-            <a class="card-link" href="https://medium.com/@leo.fonseca.canada/cpl-machine-learning-vs-real-result-8738a6f67115" target="_blank" rel="noopener">→ Read on Medium</a>
-          </div>
-        </div>
-        <h3 class="cards-group-label">💻 Projects</h3>
-        <div class="cards">
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Statistical Modelling Project</div>
-              <span class="card-type github">GitHub</span>
-            </div>
-            <a class="card-link" href="https://github.com/leoaugusto1976/Statistical-Modelling-Project" target="_blank" rel="noopener">→ View on GitHub</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Final Project — Tableau</div>
-              <span class="card-type github">GitHub</span>
-            </div>
-            <a class="card-link" href="https://github.com/leoaugusto1976/Final-Project-Tableau" target="_blank" rel="noopener">→ View on GitHub</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Midterm Project</div>
-              <span class="card-type github">GitHub</span>
-            </div>
-            <a class="card-link" href="https://github.com/leoaugusto1976/Midterm_Project" target="_blank" rel="noopener">→ View on GitHub</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">RnR — CPL Predictions</div>
-              <span class="card-type github">GitHub</span>
-            </div>
-            <a class="card-link" href="https://github.com/leoaugusto1976/RnR-CPL" target="_blank" rel="noopener">→ View on GitHub</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Supervised Learning Project</div>
-              <span class="card-type github">GitHub</span>
-            </div>
-            <a class="card-link" href="https://github.com/leoaugusto1976/LHL-Supervised-Learning-Project" target="_blank" rel="noopener">→ View on GitHub</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">XGBoost Assignments</div>
-              <span class="card-type github">GitHub</span>
-            </div>
-            <a class="card-link" href="https://github.com/leoaugusto1976/XGBoost-Assignments" target="_blank" rel="noopener">→ View on GitHub</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Unsupervised Learning Project</div>
-              <span class="card-type github">GitHub</span>
-            </div>
-            <a class="card-link" href="https://github.com/leoaugusto1976/LHL-Unsupervised-Learning-Project" target="_blank" rel="noopener">→ View on GitHub</a>
-          </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">LHL Final Project</div>
-              <span class="card-type github">GitHub</span>
-            </div>
-            <a class="card-link" href="https://github.com/leoaugusto1976/lhl-final-project" target="_blank" rel="noopener">→ View on GitHub</a>
-          </div>
-        </div>
+        </details>
       </div>
     </details>
   </section>
 
   <!-- ── Quantum ── -->
-  <section id="quantum">
-    <span class="section-label">Quantum</span>
-    <h2>Quantum Computing</h2>
-    <p class="section-intro">Foundational references on quantum mechanics, quantum information, and quantum algorithms.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="card-header-row">
-          <div class="card-title">Quantum Computation and Quantum Information (10th Anniversary Edition)</div>
-          <span class="card-type book">Book</span>
+  <section id="quantum" class="collapsible">
+    <details class="section-collapse">
+      <summary>
+        <div>
+          <span class="section-label">Quantum</span>
+          <h2>Quantum Computing</h2>
+          <p class="section-intro">Foundational references on quantum mechanics, quantum information, and quantum algorithms.</p>
         </div>
-        <div class="card-meta">Michael A. Nielsen &amp; Isaac L. Chuang · Cambridge University Press · 2010</div>
-        <div class="card-desc">The definitive reference for quantum computing — often called "Mike and Ike". Covers quantum circuits, quantum algorithms (Shor, Grover), quantum error correction, and quantum information theory from the ground up.</div>
-        <a class="card-link" href="https://www.amazon.ca/Quantum-Computation-Information-10th-Anniversary/dp/1107002176" target="_blank" rel="noopener">→ View on Amazon</a>
-      </div>
-      <div class="card">
-        <div class="card-header-row">
-          <div class="card-title">Mini-course on Quantum Computing and Post-Quantum Cryptography: Fundamentals and Applications</div>
-          <span class="card-type course">Course</span>
+        <span class="section-chevron" aria-hidden="true">▾</span>
+      </summary>
+      <div class="section-body">
+        <div class="cards">
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title">Quantum Computation and Quantum Information (10th Anniversary Edition)</div>
+              <span class="card-type book">Book</span>
+            </div>
+            <div class="card-meta">Michael A. Nielsen &amp; Isaac L. Chuang · Cambridge University Press · 2010</div>
+            <div class="card-desc">The definitive reference for quantum computing — often called "Mike and Ike". Covers quantum circuits, quantum algorithms (Shor, Grover), quantum error correction, and quantum information theory from the ground up.</div>
+            <a class="card-link" href="https://www.amazon.ca/Quantum-Computation-Information-10th-Anniversary/dp/1107002176" target="_blank" rel="noopener">→ View on Amazon</a>
+          </div>
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title">Mini-course on Quantum Computing and Post-Quantum Cryptography: Fundamentals and Applications</div>
+              <span class="card-type course">Course</span>
+            </div>
+            <div class="card-meta">Venturus · 8 hours · 2026 Apr</div>
+            <div class="card-desc">Introduced core concepts of quantum computing and post-quantum cryptography, including practical applications in securing communication against quantum threats.</div>
+            <a class="card-link" href="https://www.venturus.org.br/en" target="_blank" rel="noopener">→ Visit Venturus</a>
+          </div>
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title">Foundations of Quantum Technologies</div>
+              <span class="card-type course">Course</span>
+            </div>
+            <div class="card-meta">UBC (University of British Columbia) · 2026 Oct 6 – Nov 3</div>
+            <a class="card-link" href="https://www.ubc.ca" target="_blank" rel="noopener">→ Visit UBC</a>
+          </div>
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title">Applications of Quantum Technology</div>
+              <span class="card-type course">Course</span>
+            </div>
+            <div class="card-meta">UBC (University of British Columbia) · 2026 Nov 1 – Dec 15</div>
+            <a class="card-link" href="https://www.ubc.ca" target="_blank" rel="noopener">→ Visit UBC</a>
+          </div>
         </div>
-        <div class="card-meta">Venturus · 8 hours · 2026 Apr</div>
-        <div class="card-desc">Introduced core concepts of quantum computing and post-quantum cryptography, including practical applications in securing communication against quantum threats.</div>
-        <a class="card-link" href="https://www.venturus.org.br/en" target="_blank" rel="noopener">→ Visit Venturus</a>
       </div>
-    </div>
+    </details>
   </section>
 
   <!-- ── Quantum Machine Learning ── -->
-  <section id="qml">
-    <span class="section-label">QML</span>
-    <h2>Quantum Machine Learning</h2>
-    <p class="section-intro">Papers, tutorials, and resources bridging quantum computing with machine learning.</p>
-
-    <div class="qml-roadmap-wrapper">
-      <img src="qml-roadmap.png" alt="QML Roadmap 2026" class="qml-roadmap-img" />
-      <div class="qml-roadmap-caption">QML Roadmap 2026</div>
-    </div>
-
-    <div class="cards">
-      <div class="card">
-        <div class="card-header-row">
-          <div class="card-title">QML Roadmap 2026 — Trying to enter QML in 2026? This is the path.</div>
-          <span class="card-type linkedin">LinkedIn</span>
+  <section id="qml" class="collapsible">
+    <details class="section-collapse">
+      <summary>
+        <div>
+          <span class="section-label">QML</span>
+          <h2>Quantum Machine Learning</h2>
+          <p class="section-intro">My portfolio roadmap: one project per algorithm from the cheatsheet below, each built as a classical machine learning model and as its quantum machine learning counterpart, then compared.</p>
         </div>
-        <div class="card-meta">Kiran Kaur Raina · LinkedIn · 2024</div>
-        <div class="card-desc">A comprehensive visual roadmap for getting into Quantum Machine Learning in 2026 — covering prerequisites in quantum computing, classical ML, and the key QML topics to master.</div>
-        <a class="card-link" href="https://www.linkedin.com/posts/kiran-kaur-raina-b2922622a_trying-to-enter-qml-in-2026-this-is-the-activity-7422290793572442112-a_Bh/" target="_blank" rel="noopener">→ View on LinkedIn</a>
+        <span class="section-chevron" aria-hidden="true">▾</span>
+      </summary>
+      <div class="section-body">
+        <div class="qml-roadmap-wrapper">
+          <a href="ml_algorithms_qml_1920x1080.png" target="_blank" rel="noopener">
+            <img src="ml_algorithms_qml_1920x1080.png" alt="Cheatsheet of 20 machine learning algorithms and their quantum machine learning connections" class="qml-roadmap-img" />
+          </a>
+          <div class="qml-roadmap-caption">Machine Learning Algorithms + Quantum ML · click to open full size</div>
+        </div>
+
+        <h3 class="cards-group-label">🗺️ Roadmap</h3>
+        <div class="cards">
+          <div class="card">
+            <div class="card-header-row">
+              <div class="card-title">1. Linear Regression — House Price Prediction</div>
+              <span class="card-type progress">In progress</span>
+            </div>
+            <div class="card-meta">Classical ML + Quantum ML · California Housing dataset · 2026</div>
+            <div class="card-desc">Predicting median house values in California, first with a classical linear regression (from scratch and with scikit-learn), then with a hybrid variational quantum regressor, plus a look at HHL-style quantum linear solvers.</div>
+          </div>
+        </div>
       </div>
-    </div>
+    </details>
   </section>
 
   <!-- ── Footer ── -->
   <footer>
     <p>© 2026 LeoQML · Built with curiosity ⚛️</p>
   </footer>
+
+  <script>
+    // Open a collapsible section when it is linked to (nav click or #hash in the URL)
+    function openSection(id) {
+      const section = document.getElementById(id);
+      const details = section && section.querySelector(':scope > details.section-collapse');
+      if (details) details.open = true;
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => openSection(link.getAttribute('href').slice(1)));
+    });
+    window.addEventListener('hashchange', () => openSection(location.hash.slice(1)));
+    if (location.hash) openSection(location.hash.slice(1));
+  </script>
 
 </body>
 </html>
