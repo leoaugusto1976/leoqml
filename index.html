@@ -132,6 +132,12 @@
       text-decoration: none;
     }
     .card-link:hover { text-decoration: underline; }
+    .card-with-badge { display: flex; align-items: center; gap: 1.2rem; }
+    .card-badge { width: 88px; height: 88px; flex-shrink: 0; object-fit: contain; transition: transform 0.2s; }
+    .card-badge-link { flex-shrink: 0; line-height: 0; border-radius: 50%; }
+    .card-badge-link:hover .card-badge { transform: scale(1.05); }
+    .card-badge-link:focus-visible { outline: 2px solid #58a6ff; outline-offset: 3px; }
+    .card-body { flex: 1; min-width: 0; }
 
     /* ── About ── */
     .about-grid {
@@ -530,13 +536,16 @@
             <div class="card-desc">Introduced core concepts of quantum computing and post-quantum cryptography, including practical applications in securing communication against quantum threats.</div>
             <a class="card-link" href="https://www.venturus.org.br/en" target="_blank" rel="noopener">→ Visit Venturus</a>
           </div>
-          <div class="card">
-            <div class="card-header-row">
-              <div class="card-title">Foundations of Quantum Technologies</div>
-              <span class="card-type course">Course</span>
+          <div class="card card-with-badge">
+            <a href="ubc_foundations_badge.png" target="_blank" rel="noopener" class="card-badge-link" title="Open badge at full size"><img src="ubc_foundations_badge.png" alt="UBC Foundations of Quantum Technologies completion badge" class="card-badge" /></a>
+            <div class="card-body">
+              <div class="card-header-row">
+                <div class="card-title">Foundations of Quantum Technologies</div>
+                <span class="card-type course">Course</span>
+              </div>
+              <div class="card-meta">UBC (University of British Columbia) · 2026 Oct 6 – Nov 3</div>
+              <a class="card-link" href="https://extendedlearning.ubc.ca/" target="_blank" rel="noopener">→ Visit UBC</a>
             </div>
-            <div class="card-meta">UBC (University of British Columbia) · 2026 Oct 6 – Nov 3</div>
-            <a class="card-link" href="https://www.ubc.ca" target="_blank" rel="noopener">→ Visit UBC</a>
           </div>
           <div class="card">
             <div class="card-header-row">
@@ -544,7 +553,7 @@
               <span class="card-type course">Course</span>
             </div>
             <div class="card-meta">UBC (University of British Columbia) · 2026 Nov 1 – Dec 15</div>
-            <a class="card-link" href="https://www.ubc.ca" target="_blank" rel="noopener">→ Visit UBC</a>
+            <a class="card-link" href="https://extendedlearning.ubc.ca/" target="_blank" rel="noopener">→ Visit UBC</a>
           </div>
         </div>
       </div>
